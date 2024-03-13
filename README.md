@@ -43,5 +43,17 @@ Steps to Build the Project:
 ![Screenshot 2024-02-24 135229](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/59ebdc55-79a9-4c83-8481-829244361cb2)
 2.  Setup AWS CloudFront
 - To set up the Cloud Front Distribution, I will access this on the search bar on the aws console
+![Screenshot 2024-02-25 233758](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/ef8593db-5ca7-405b-ba68-31a7f1bc4123)
+- The purpose of using CloudFront is to allow applications stored in my S3 Bucket to have very low latency
+- I clicked on the Cloud Front Distribution button
+![Screenshot 2024-02-25 234112](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/c4b198a3-62bc-41c6-86e0-54eed4c8ba98)
+- I then configured the Distribution page with the following:
+![Screenshot 2024-02-25 234235](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/bf282741-06a4-4463-8d22-f9610f642041)
+- As the Origin Domain I used the Amazon S3 Bucket I had previously made
+![Screenshot 2024-02-25 234620](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/93ff7e24-0ca1-4720-acf4-1a1ed5e38263)
+- I made the origin access as the recommended option as this will allow access only from the CloudFront and not publicly from the S3 Bucket. I will show an example
+![Screenshot 2024-02-25 235314](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/cc3582fb-7a32-491f-a662-38dbbff71aac)
+![Screenshot 2024-02-25 235350](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/ee3000bf-a2f7-451e-b2a3-5693b73bc34d)
+
 
 
