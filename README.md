@@ -75,6 +75,19 @@ Steps to Build the Project:
 ![Screenshot 2024-02-26 001058](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/938fc060-2943-43e5-b18a-b687c8f65a28)
 - As I was happy with the settings configured, I clicked “Create distribution” as shown above
 - Below is the outcome of creating the distribution
+![Screenshot 2024-02-26 001601](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/1eec9cea-345c-4ec7-915a-4c646277e87a)
+- It may take a few minutes for the status to change from Deploying
+![Screenshot 2024-02-26 001742](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/2dea81b6-e2da-432f-8a49-aa4f80417a85)
+![Screenshot 2024-02-26 001804](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/d26d6bf2-7bf8-4f90-a694-cb3728c1c093)
+- Once the Last Modified status changes from “Deploying” to the current date it was last modified, then it has been set
+![Screenshot 2024-02-26 002017](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/3904cd9a-84b1-4368-b5fd-7f91ac22b2ab)
+- Now I needed to copy the S3 Bucket policy which I needed to attach to the Bucket so Cloudfront could access my AWS S3 Bucket
+- To accomplish this I went into my distribution
+![Screenshot 2024-02-26 002305](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/b2ba3527-034b-4d77-bb08-361fdb3ce595)
+- I then clicked on the origins tab and selected the origin name I had created
+![Screenshot 2024-02-26 002438](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/bff3ed57-d1c6-455d-ba6e-9b89625ada6f)
+- Once I had selected them, I clicked on the edit button on the right side of the page. This brought out an edit origin page
+
 
 
 
