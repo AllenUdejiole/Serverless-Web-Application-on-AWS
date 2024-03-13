@@ -87,6 +87,8 @@ Steps to Build the Project:
 - I then clicked on the origins tab and selected the origin name I had created
 ![Screenshot 2024-02-26 002438](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/bff3ed57-d1c6-455d-ba6e-9b89625ada6f)
 - Once I had selected them, I clicked on the edit button on the right side of the page. This brought out an edit origin page
+![Screenshot 2024-02-26 002854](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/7a64c567-d163-4170-bb7b-61558764f5cf)
+- I scrolled down on the page till i came across “Bucket Policy”
 
 
 
