@@ -31,4 +31,17 @@ Steps to Build the Project:
 - First I clicked on the S3 Bucket itself and it presented the upload button
 ![Screenshot 2024-02-24 132942](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/79242d9b-5020-46fb-9277-6802bc0204f0)
 ![Screenshot 2024-02-24 133024](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/8b2625f5-dd0e-4f52-a341-0662a46603f4)
+- Next, I clicked on Add Files to bring the files from my local computer to the S3 Bucket
+- I selected the 3 files “index.html”, “script.js” and “style.css”
+![Screenshot 2024-02-24 133751](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/a3d54efc-4de2-4596-b506-a8789def5f65)
+![Screenshot 2024-02-24 134103](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/b2d38329-420a-43bc-a0d9-d517bb2b44ca)
+- The files have been dragged
+![Screenshot 2024-02-24 135046](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/410321b8-9aee-4408-96de-97507d5ae645)
+- Now I will upload them
+![Screenshot 2024-02-24 134923](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/a5ce1396-26b6-4091-8377-5df4b89f1738)
+- They were successfully uploaded
+![Screenshot 2024-02-24 135229](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/59ebdc55-79a9-4c83-8481-829244361cb2)
+2.  Setup AWS CloudFront
+- To set up the Cloud Front Distribution, I will access this on the search bar on the aws console
+
 
