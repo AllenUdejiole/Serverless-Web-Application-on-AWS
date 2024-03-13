@@ -54,6 +54,26 @@ Steps to Build the Project:
 - I made the origin access as the recommended option as this will allow access only from the CloudFront and not publicly from the S3 Bucket. I will show an example
 ![Screenshot 2024-02-25 235314](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/cc3582fb-7a32-491f-a662-38dbbff71aac)
 ![Screenshot 2024-02-25 235350](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/ee3000bf-a2f7-451e-b2a3-5693b73bc34d)
+![Screenshot 2024-02-25 235427](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/c5be1c99-1579-4cbd-b522-894e0d00953c)
+- In the S3 Bucket, I clicked on the index.html file, copied the URL link, and pasted it into a web browser to show that I had no access due to not making the S3 Bucket public
+- I next created an Origin Access Control setting by clicking “Create control setting”
+![Screenshot 2024-02-26 000002](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/2658f77f-5e21-4e59-b401-0dcfbabffed3)
+![Screenshot 2024-02-26 000211](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/8eb6c00e-8d27-4597-b8d7-b2034ea8aaa8)
+- I made sure I created a name and the Origin Type was also S3. The rest of the settings can be left as default
+- I then created the Control setting
+- Due to the name character settings only having a max of 64 characters, I removed my name at the start of the name
+![Screenshot 2024-02-26 000522](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/0f524854-d926-4a56-8af9-4e5d1d75add4)
+- This is the control setting being created
+![Screenshot 2024-02-26 000751](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/4270619e-49fd-4c7f-8aad-d38bbc5c484a)
+- For this project, these were the important configurations to adjust
+- Everything else I had left as default
+![Screenshot 2024-02-26 001108](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/d7aea768-eb3f-411e-a9e6-395ce9e71c7c)
+![Screenshot 2024-02-26 001010](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/f5753cf8-2133-48dc-af17-b9df05e9a713)
+![Screenshot 2024-02-26 001022](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/262c7157-1b2c-4561-876c-d9be5ba58601)
+![Screenshot 2024-02-26 001033](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/e0f51214-04e7-44a6-a584-30c3e46db0a7)
+![Screenshot 2024-02-26 001047](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/1d818309-18be-40a6-8082-fb4e3de92bc2)
+![Screenshot 2024-02-26 001058](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/938fc060-2943-43e5-b18a-b687c8f65a28)
+
 
 
 
