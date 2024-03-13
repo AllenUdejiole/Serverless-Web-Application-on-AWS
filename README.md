@@ -73,6 +73,8 @@ Steps to Build the Project:
 ![Screenshot 2024-02-26 001033](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/e0f51214-04e7-44a6-a584-30c3e46db0a7)
 ![Screenshot 2024-02-26 001047](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/1d818309-18be-40a6-8082-fb4e3de92bc2)
 ![Screenshot 2024-02-26 001058](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/938fc060-2943-43e5-b18a-b687c8f65a28)
+- As I was happy with the settings configured, I clicked “Create distribution” as shown above
+- Below is the outcome of creating the distribution
 
 
 
