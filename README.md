@@ -19,3 +19,16 @@ Steps to Build the Project:
 - I left the Object Ownership as default as all objects will be owned on this account
 - I Blocked Public Access so outsiders don't have access to the S3 Bucket
 ![Screenshot 2024-02-24 014813](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/ddc1f1fc-878a-4a04-bff4-deec21932f02)
+- I left versioning as disabled currently as it was not needed at that point
+- I also left the Encryption Key type to Amazon S3 managed keys( SSE-S3)
+- Bucket Key was left as Enabled
+- After these configurations, I created the S3 Bucket (May take a few seconds to create)
+![Screenshot 2024-02-24 015513](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/07443d15-ae57-45e8-b6f8-bad35ac87ee0)
+![Screenshot 2024-02-24 015525](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/81b85208-17eb-4394-b9e2-b9fa25b8c2ba)
+- The S3 Bucket has been successfully created
+![Screenshot 2024-02-24 015625](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/c1471301-0879-4c3e-b97e-2f745b7f3e95)
+- Now I will upload the HTML, CSS, and Javascript files into the bucket
+- First I clicked on the S3 Bucket itself and it presented the upload button
+![Screenshot 2024-02-24 132942](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/79242d9b-5020-46fb-9277-6802bc0204f0)
+![Screenshot 2024-02-24 133024](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/8b2625f5-dd0e-4f52-a341-0662a46603f4)
+
