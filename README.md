@@ -41,7 +41,9 @@ Steps to Build the Project:
 ![Screenshot 2024-02-24 134923](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/a5ce1396-26b6-4091-8377-5df4b89f1738)
 - They were successfully uploaded
 ![Screenshot 2024-02-24 135229](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/59ebdc55-79a9-4c83-8481-829244361cb2)
+
 2.  Setup AWS CloudFront
+  
 - To set up the Cloud Front Distribution, I will access this on the search bar on the aws console
 ![Screenshot 2024-02-25 233758](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/ef8593db-5ca7-405b-ba68-31a7f1bc4123)
 - The purpose of using CloudFront is to allow applications stored in my S3 Bucket to have very low latency
@@ -116,6 +118,43 @@ Steps to Build the Project:
 - Once in the edit page, I scrolled down to Default root object and changed the name to the index.html file name that I have in my s3 bucket. Everything else was left as Default
 ![Screenshot 2024-02-26 005922](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/2c71894c-f6fa-4dcd-ad13-6e28b451ed9e)
 ![Screenshot 2024-02-26 010020](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/ec8da1bc-1de6-4034-b42a-19b166ba8591)
+![Screenshot 2024-02-26 010111](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/0fece109-5751-459e-95f3-9b801d7017d6)
+![Screenshot 2024-02-26 010122](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/d814cdbd-16cc-4bd5-a0cd-526c72652f23)
+- Now the distribution settings have been updated, I have to make sure the status has also been updated from “Deploying” to insure there are no errors
+- To check this I clicked on the Distributions tab and refreshed the policy to see if the “Last Modified” status would change
+![Screenshot 2024-02-26 010451](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/d493aea3-4fff-44cf-939a-fc8256a5dea7)
+![Screenshot 2024-02-26 010513](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/9f5df431-8e28-4b7a-a97e-b68cac2a7226)
+- It has successfully been created with no errors
+
+3.  Setup Route 53
+
+- The next procedure was to set up a Route 53 and enable it for the CloudFront Distribution
+![Screenshot 2024-02-26 154234](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/f85cda9b-4408-4328-8d0d-3759bcd03107)
+- Highlighted in the red circle is where I needed to create my own Domain for me to use
+- I had purchased a domain online on “names.co.uk.” and the domain name I created was called “awscloudallen.co.uk”
+- Now I will open Route 53 in my aws console to manage the domain as follows:
+![Screenshot 2024-02-26 161454](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/ee691cfc-e924-4e74-ae35-246d14ba14e3)
+![Screenshot 2024-02-26 161526](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/c048f880-40e2-48f4-adba-da2fa24898bb)
+- I then clicked on the option “Create Hosted Zones” as I have a domain already, Hosted Zones tells Route 53 how to respond to DNS queries for a domain such as example.com or in my case “awscloudallen.co.uk
+![Screenshot 2024-02-26 162214](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/0084ef6f-cd9b-4b3d-b33c-9361e849d583)
+- Once I clicked on Get Started, it presented the configuration page for Hosted Zones
+![Screenshot 2024-02-26 162532](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/d6d6000c-f2f1-4b09-94b7-dad10e2ed369)
+- The domain name I will input will be the domain name that I purchased which is “awscloudallen.co.uk”
+![Screenshot 2024-02-26 163258](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/0ea0912d-5a8a-4017-bc01-df6aa9136e03)
+- In the Type, I clicked the Public Hosted Zone as this is my public-facing web application
+- Everything else I left as default and clicked Created hosted zone at the bottom right
+![Screenshot 2024-02-26 163308](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/b5ee45c2-b82e-4612-bf83-b7349deaf0cc)
+![Screenshot 2024-02-26 163543](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/3d1b08d2-eb7c-4972-91cb-02678387dbc9)
+- I now needed to copy the name servers/route traffic from the route 53  onto the manage dns page from the domain website which I purchased my domain
+![Screenshot 2024-02-26 164100](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/71defe26-bcea-4721-8ad7-5ee722352c89)
+![Screenshot 2024-02-26 164226](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/b2a30afa-e487-435c-a4a8-058e0c76f491)
+- Here is where I will copy the name servers into each line as follows:
+![Screenshot 2024-02-26 165645](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/e9e8a9b9-41f6-4815-acac-2e6f33f9dff0)
+- I clicked the update button and allowed the nameserver to take effect between 12-24 hours
+- The Next step was for me to go into the CloudFront and edit the settings to change the “Alternate Domain Names”
+
+
+
 
 
 
