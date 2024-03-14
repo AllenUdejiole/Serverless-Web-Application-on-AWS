@@ -152,6 +152,16 @@ Steps to Build the Project:
 ![Screenshot 2024-02-26 165645](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/e9e8a9b9-41f6-4815-acac-2e6f33f9dff0)
 - I clicked the update button and allowed the nameserver to take effect between 12-24 hours
 - The Next step was for me to go into the CloudFront and edit the settings to change the “Alternate Domain Names”
+![Screenshot 2024-02-27 152226](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/f86cda85-74c6-4cec-9a57-75e911470102)
+- In the edit page, I clicked on “Add Item” under the “Alternate domain name (CNAME) Section and pasted my domain name with “greeting.awscloudallen.co.uk”
+![Screenshot 2024-02-27 152431](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/5096b946-dd3f-426d-b7e2-7ceedb7c8053)
+- The purpose of the greeting is because the application is a greeting application
+![Screenshot 2024-02-27 152858](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/9f1dd2b6-c6c1-4a7a-aff4-be95e8edb447)
+- In the next section, I needed to request a Custom SSL certificate which is recommended as it secures the application
+![Screenshot 2024-02-27 153130](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/cb0f0a1c-7953-4c8a-a6d3-152c7b52881c)
+- In the next page, I clicked on next as I wanted a public SSL certificate
+![Screenshot 2024-02-27 153327](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/ba7b31c0-4624-486e-aae7-55f53a877853)
+
 
 
 
