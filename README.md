@@ -161,6 +161,32 @@ Steps to Build the Project:
 ![Screenshot 2024-02-27 153130](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/cb0f0a1c-7953-4c8a-a6d3-152c7b52881c)
 - In the next page, I clicked on next as I wanted a public SSL certificate
 ![Screenshot 2024-02-27 153327](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/ba7b31c0-4624-486e-aae7-55f53a877853)
+- I now pasted my domain name with the “*.” in front of the domain as it stores all the things in the domain
+![Screenshot 2024-02-27 153441](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/6cddd69c-9ff6-43fd-b0b2-91fa81fa8a7d)
+- Once I made these changes, I left everything else as default and clicked on Request
+![Screenshot 2024-02-27 154110](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/9d3e547e-9a33-4d8e-b4d2-8d70328eb70e)
+- This is the result of the request
+![Screenshot 2024-02-27 154206](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/10eeaa3a-2f9e-4545-aefe-539910cb3fe0)
+- After some time I needed to refresh the page for the certificate to appear
+![Screenshot 2024-02-27 154358](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/f03fb5e1-baa5-42c1-80d1-56f4a4e70b36)
+- I now had to wait for the status to change from pending
+- To Change the status from pending I needed to validate the certificate
+- To do this I needed to click into the certificate ID and Create records in Route 53
+![Screenshot 2024-02-28 141328](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/3cb8d981-7403-45cb-9404-3505f602d097)
+![Screenshot 2024-02-28 141635](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/45fb7402-5f2e-4f89-bb38-581949081c7b)
+- When I clicked in the Create Records in Route 53 button, It created a Cname in Route 53
+- I clicked the “Create Records” button to validate the certificate as follows:
+![Screenshot 2024-02-28 141903](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/d0b79adf-6407-4b9c-a944-2b38126e724a)
+- Now the DNS records have been successfully created
+![Screenshot 2024-02-28 142154](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/c1514b8f-2ccf-4bd4-a12f-f5d12accb6f5)
+- Now I had to go to the Route 53 page on the aws console and make sure there was a third entry in the records section
+![Screenshot 2024-02-28 142349](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/626878d1-a045-434a-94de-8deeab35edac)
+- Now I created a new record for the sub domain which was in the CloudFront distribution settings with the “greeting” followed by the domain name
+![Screenshot 2024-02-28 143533](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/d7ac0750-da32-4a23-9160-7f3f641c6896)
+- To accomplish this I created a new route 53 record
+- I provided the “greeting” in the record name in the next page
+![Screenshot 2024-02-28 143807](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/a6d4e7de-8e7d-4488-874a-538cddd4e98f)
+![Screenshot 2024-02-28 143849](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/62e691c6-335c-4b1a-9234-cc39cc9ea815)
 
 
 
