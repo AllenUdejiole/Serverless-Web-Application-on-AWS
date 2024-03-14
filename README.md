@@ -89,6 +89,34 @@ Steps to Build the Project:
 - Once I had selected them, I clicked on the edit button on the right side of the page. This brought out an edit origin page
 ![Screenshot 2024-02-26 002854](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/7a64c567-d163-4170-bb7b-61558764f5cf)
 - I scrolled down on the page till i came across “Bucket Policy”
+- I copied the policy and pasted it into my Amazon S3 Bucket
+![Screenshot 2024-02-26 003039](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/7ee2adaf-ecc3-4a08-9ec1-0810b2afe06e)
+- To paste it into the Bucket, I went into my Amazon S3 Buckets and selected my S3 Bucket
+![Screenshot 2024-02-26 003232](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/5dcc4d1d-9ba0-4628-b2e6-a5fbd7f471e1)
+- Once I clicked into the s3 bucket, i went to the permissions tab
+- Under Permissions there is a section called “Bucket Policy”
+- I clicked on the edit button at the “Bucket Policy” section
+![Screenshot 2024-02-26 003407](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/48be578c-ed07-4c14-b8b4-b23cb878febc)
+![Screenshot 2024-02-26 003610](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/e9503cef-af92-47af-90b6-a49da0877182)
+- The edit button brought me to the page where I would paste the Policy I had copied
+![Screenshot 2024-02-26 003739](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/fc3ca5d3-60f3-4edb-af1a-d0d18ee31865)
+![Screenshot 2024-02-26 003758](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/537d9d51-4b3b-4af1-85c7-17abe90bae91)
+- In the Policy it states “SID” : AllowCloudFrontServicePrincipal” which allows CloudFront Service Principal to access my S3 Bucket
+- “Effect” is the action that allows the access
+- The Principal is “Service”:cloudfront.amazonaws.com”
+- The “Action”: “s3:GetObject” is telling it to get the object only on the “Resource”: “arn:aws:s3:::allen-serverless-web-application-on-aws/*”
+- The “Condition” is only active when the Cloudfront accesses the “AWS:SourceArn”:"arn:aws:cloudfront::471112764895:distribution/E3UJOYN3GHJ9ND"
+- Once they have been pasted, I clicked on “Save Changes”
+![Screenshot 2024-02-26 004530](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/d0d52782-e1a1-4cf9-a9fb-2eadd5282127)
+![Screenshot 2024-02-26 004506](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/8b0ff8ca-a084-478a-8684-94d1819c1bf3)
+- Now I needed to go back to the Distribution page on CloudFront and adjust the settings on the General tab
+- I now had to add a domain name and change the Defaul Root Object to - HTML as I had an HTML object in my s3 Bucket
+- To do this I clicked the Edit button on the right
+![Screenshot 2024-02-26 004825](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/ddd7c958-c3a3-4994-aab8-34515d6fb79e)
+- Once in the edit page, I scrolled down to Default root object and changed the name to the index.html file name that I have in my s3 bucket. Everything else was left as Default
+![Screenshot 2024-02-26 005922](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/2c71894c-f6fa-4dcd-ad13-6e28b451ed9e)
+![Screenshot 2024-02-26 010020](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/ec8da1bc-1de6-4034-b42a-19b166ba8591)
+
 
 
 
