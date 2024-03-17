@@ -220,6 +220,55 @@ Steps to Build the Project:
 
 - The next step was for me to create the Dynamo DB table and map it with Lambda
 - For me to create the Dynamo DB table, I first needed to create an IAM role for the Lambda Function to give permissions to access the Dynamo DB
+- To create the Dynamo DB I went to the AWS console page and searched Dynamo DB on the search bar
+![Screenshot 2024-03-01 143543](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/8f6fbbf2-f377-43f4-92c7-ae2664197e35)
+- I then will click on “Create Table” as follows:
+![Screenshot 2024-03-01 144121](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/9816f615-edd6-4956-a673-addb1f60a11c)
+- In the Create Table page, the only two sections I changed were the Name for the table and the Partition key
+- I gave the name “allen-serverless-web-application-on-aws” and the Partition key “id”
+![Screenshot 2024-03-01 144346](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/0ca69209-8b5b-4d52-a2a9-e79602b2d42b)
+- Once I made these changes, I created the table
+![Screenshot 2024-03-01 144611](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/4b93be33-f934-40bc-b038-fff47bcf0a2d)
+![Screenshot 2024-03-01 144644](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/0d4069f3-5a4a-4584-aea5-9f6f9d7bd68b)
+- It may take some time for the table to be fully created. This will be the outcome of it fully created:
+![Screenshot 2024-03-01 144717](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/a8831327-9ebc-4bc0-a8d9-821ada4bbe91)
+- I am going to be creating a serverless web application from this static web application
+- The Views section on the static web application will be a counter to display the number of times a user has viewed the web application
+![Screenshot 2024-03-01 145237](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/4b429c06-0cb5-4a87-a836-d2c73a50af08)
+- To accomplish this, I needed to use the Dynamo DB table and the Lambda Function
+- My Next step was creating the table
+- I clicked on the table name which was fully created
+![Screenshot 2024-03-01 144717](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/3924c88b-add9-4d05-bbda-7b49d8b0115a)
+- I now clicked on Explore Table Items and it showed that there was no content in the table as it has not been created yet
+![Screenshot 2024-03-01 145831](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/50523479-7f1f-4525-b4e0-2bf042d413c3)
+- I will now create an item to input
+![Screenshot 2024-03-01 145959](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/a4a835f6-8191-4870-bbae-b9c8af411c53)
+![Screenshot 2024-03-01 150810](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/152abff9-0112-41b1-98a4-73dfe840a470)
+- The “id” will be our partition key and I will set the Value to 0
+- In the “Add new attribute” drop-down on the right I will set a new number and label it as Views”. This will represent the views counter on the web application. I will change the value for the “views” to 1 and click “create item” which will create the item as follows:
+![Screenshot 2024-03-03 005459](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/9b3cb0c3-7791-4737-8a8b-69f4e66da8a8)
+![Screenshot 2024-03-03 005525](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/662f486c-c3b8-413e-b6c1-e4b64630b22f)
+- The next step I now proceeded to was to create an IAM Role to give access to the Lambda Function
+- I have not created the Lambda Function yet but I am fulfilling the prerequisite by creating the IAM Role
+- To do so, I typed in IAM in the search bar on the console page and clicked “IAM” as follows:
+![Screenshot 2024-03-03 121558](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/f8b679fd-701f-4ac0-970d-3b5b6905a440)
+- I now will go to “Roles” on the far left and click on “Create Role”
+![Screenshot 2024-03-03 121800](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/337ad890-b65b-464c-aa57-f616c772645e)
+![Screenshot 2024-03-03 121857](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/ed326833-0984-4b37-915a-32ed84b22397)
+- Once I create the role, I will now select the entity type as AWS Service and choose Lambda as the service from the dropdown as we are creating a role for Lambda
+- Followed by Next
+![Screenshot 2024-03-03 122013](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/7bef64a9-95a5-44d6-906c-be9e5306fb61)
+- In the Permissions policies, I put DynamoDB and gave it full access as follows:
+![Screenshot 2024-03-03 123240](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/8a01d6ba-c9ee-4312-8d32-7f4ea101d046)
+- I entered a Role name and followed it by clicking next at the bottom right
+![Screenshot 2024-03-03 123415](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/108161db-7f80-41b6-a560-840446087ea6)
+![Screenshot 2024-03-03 123520](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/7dc9f639-43c3-43c3-b676-cfa69e44280c)
+- I viewed the role to get more details on the role
+![Screenshot 2024-03-03 123520](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/baec333c-51c1-4557-92cb-784c1e3c2ad1)
+![Screenshot 2024-03-03 123651](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/2771980b-83c3-4430-8574-4cc2c36160b6)
+
+
+
 
 
 
