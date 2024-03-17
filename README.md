@@ -187,6 +187,40 @@ Steps to Build the Project:
 - I provided the “greeting” in the record name in the next page
 ![Screenshot 2024-02-28 143807](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/a6d4e7de-8e7d-4488-874a-538cddd4e98f)
 ![Screenshot 2024-02-28 143849](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/62e691c6-335c-4b1a-9234-cc39cc9ea815)
+- After inputting the “greeting”, I changed the alias to enable it followed by routing the trafficking to the Cloud Front Distribution as follows:
+![Screenshot 2024-02-28 144313](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/bc56bc61-8f02-43ef-89f7-e721b767b3ef)
+- In the choose distribution, No options came up for me and this was due to the certificate not being added
+- To change this I needed to refresh the certificate page to make sure it was fully “issued” followed by refreshing the SSL certificate in CloudFront Distribution to get the certificate name in the drop-down
+![Screenshot 2024-02-28 144712](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/cfdf55e7-dd02-4704-b9e2-4c6104158bb2)
+![Screenshot 2024-02-28 144832](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/16bda490-1bb6-4778-97d6-4b78dceecc31)
+- The Purpose of the “*” is a wildcard that is used to allow any subdomain in front of “awscloudallen.co.uk”
+- This is sufficient as I can use this certificate again instead of creating a new one
+- Once I made these changes, I saved the changes
+![Screenshot 2024-02-28 145317](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/33c66b78-4c60-4de8-8cc3-4728aef3bb5c)
+![Screenshot 2024-02-28 145351](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/072a4856-d084-4e8c-a601-759d6309c4ec)
+- This is sufficient as I can use this certificate again instead of creating a new one
+- I now copied the URL with my domain and pasted it into a browser to see if it was fully functioning
+- This was the outcome:
+![image](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/3ccb0274-12b2-4b5d-9dcb-a6bfb78c0dfa)
+![Screenshot 2024-02-29 143334](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/50179365-297c-4d24-a998-de83f48d2ebe)
+- This error message was due to an important missed step, which I will show in the next steps
+- I needed to go to my Route 53 and complete the Create Record page
+![Screenshot 2024-02-29 143642](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/03357e43-c3e2-42de-aaad-0207e3e30c91)
+![Screenshot 2024-02-29 143737](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/c0264fdd-d357-4324-aacc-8888421ea3d4)
+- The routing will now be created and the records will be created for the “greeting.awscloudallen.co.uk”
+- Once again I refreshed the browser page and it presented the content that was in my S3 bucket that was routed to the Cloud Front Distribution as follows:
+![Screenshot 2024-02-29 150254](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/84c69c53-1780-4c2a-87f0-505fe1dd3baa)
+![Screenshot 2024-02-29 150037](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/a2ce0e82-1075-4bf1-a750-405b025312ac)
+- To make the URL secure, infront of the domain I put in “https://” and this secures that URL
+![Screenshot 2024-03-01 142647](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/58a78101-fc84-4871-939c-421c38fb5ebb)
+![Screenshot 2024-03-01 142656](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/0b6b4854-1906-4a64-afd3-00804042b3b4)
+- This is the conclusion of setting up Route 53 and the certificate for the CloudFront Distribution which enables the setup to be functioning
+
+4.  Create Dynamo DB
+
+- The next step was for me to create the Dynamo DB table and map it with Lambda
+- For me to create the Dynamo DB table, I first needed to create an IAM role for the Lambda Function to give permissions to access the Dynamo DB
+
 
 
 
