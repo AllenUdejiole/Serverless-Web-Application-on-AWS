@@ -266,6 +266,59 @@ Steps to Build the Project:
 - I viewed the role to get more details on the role
 ![Screenshot 2024-03-03 123520](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/baec333c-51c1-4557-92cb-784c1e3c2ad1)
 ![Screenshot 2024-03-03 123651](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/2771980b-83c3-4430-8574-4cc2c36160b6)
+- In the trust relationships, the “sts:AssumeRole” has give access to “lambda.amazonaws.com”(Lambda)
+![Screenshot 2024-03-03 123852](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/9c289891-3c34-4527-be83-3abc75a63045)
+- Also, Dynamo DB has been given full access
+![Screenshot 2024-03-03 124029](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/4b79d70c-deda-4211-a6bd-d3ffd5a44c83)
+- This has fully set up the Dynamo DB and the IAM Role that is needed for the Lambda Function
+- Next, I will create a Lambda Function by code that will then be integrated with the web application, enabling the “views” counter to be active when the web page is refreshed based on users
+- First I will search Lambda in the search bar in the AWS console and open it
+![Screenshot 2024-03-04 124641](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/c7ce69bf-9570-412d-8fc8-86b3b27a5497)
+- The next page will require me to click on create a function to begin the steps
+![Screenshot 2024-03-04 124825](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/1849df12-d8e5-4299-bf3d-8933f481cdee)
+- I have set the name as “allen-serverless-web-application-on-aws”
+- I also set the “Runtime”(programming language) to python 3.8
+![Screenshot 2024-03-04 125042](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/baba1adf-9e42-48aa-ac94-9c38c6e4127f)
+- In the advanced settings, I enabled the function URL. This will assign HTTP endpoints to the Lambda Function
+- I changed the Auth Type to NONE as Lambda wont perform IAM authentication on requests to the URL Function. This will result in the URL endpoints being public unless I implement my authorization logic in the function
+![Screenshot 2024-03-04 125951](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/5dadf37d-3db9-4665-997b-11655902ca5b)
+- The last change I made was enabling “Configure cross-origin resource sharing (CORS)”. The purpose is to allow only the website beginning with awscloudallen.co.uk can access the particular Lambda Function
+- This will then be followed by the “Create function” as follows:
+![Screenshot 2024-03-04 130321](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/03bbf2c6-cc0b-46f8-8714-7ce525bfa997)
+- This is the outcome of the created function
+![Screenshot 2024-03-12 162140](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/bcd63a1d-9af2-4854-babe-b96943171fe1)
+- It gave us a Function URL also which is located at:
+![Screenshot 2024-03-04 130424](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/ab03fce7-0320-4842-bbef-e68690ad05a5)
+- I will copy the function and paste it into a browser remembering that it was publicly accessible
+![Screenshot 2024-03-04 130947](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/f330cfcc-b4bf-4b30-ab46-93184aa0d3ef)
+- This “Hello from Lambda” is the default code that was created when creating the function as follows:
+![Screenshot 2024-03-04 131038](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/5fa48f19-af79-46d0-8dc8-9b813070a983)
+- Now I will remove this code and implement my own code into the editor as follows:
+![Screenshot 2024-03-04 132231](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/7e1fac91-6e47-4d99-8ce0-94a2f0b380b8)
+- “Import boto3” is needed as its the SDK(Software Development Kit) for interacting with AWS
+- I created a variable called “dynamodb” and interacted it with the resource ‘dynamodb’ using boto3
+- The table(dynamodb.Table) will be based on the “allen-serverless-web-application-on-aws”
+- I created a lambda handler “def lambda_handler(event, context): which is getting the item that I created in the item in dynamo db with the partition being ‘id’:’0’
+- The ‘users’ will represent users that use the application and it will be added by 1 for each user “users = users + 1”
+- print(users) will print out the users
+- response = table.put_item(Item={‘id’:’1’, ‘users’:users}) will update users count as users will increase and the ‘id’ will increase by ‘1’
+- This will be followed by returning the ‘users’ at the end
+- I will deploy the code to see if there are any errors
+![Screenshot 2024-03-04 133745](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/f2da568b-7a8f-4fff-9868-240fea54da39)
+- I had to change the “users” to views” as views is the counter associated on the web application
+![Screenshot 2024-03-04 133842](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/d3c0420f-9564-4103-bf70-036cf353910c)
+- After deploying and testing the code, I got an error
+![Screenshot 2024-03-04 134702](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/5e867208-aeb1-46ad-a489-689f6de4f2d5)
+- This is due to creating the IAM role previously and not attaching the IAM role to this Lambda Function
+- In the Lambda function page I can adjust this by clicking on Configuration - Permissions on the left and click edit as follows:
+![Screenshot 2024-03-04 134931](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/9b659cae-ef87-44b5-9fb8-d2ec4bb72eea)
+![Screenshot 2024-03-04 135005](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/28667ff3-e56f-4b68-8ef3-fd67c017653f)
+- At the bottom I changed the existing role to the “allen-serverless-web-application-on-aws” and clicked save
+![Screenshot 2024-03-04 135106](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/044b0a78-efe9-481f-b8af-28121cdaa16a)
+![Screenshot 2024-03-04 135215](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/9db0fd79-024a-418a-a2b9-b0bd9e582178)
+- Now I will execute the Lambda Function again
+![Screenshot 2024-03-04 135306](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/0556bdd7-32c8-4915-a6ef-511b37ca6363)
+- It has been successful as it gave a response of 2. Previously in the Dynamo DB table, it had 1 view but now it will have another item with 2 as views based on the Lambda
 
 
 
