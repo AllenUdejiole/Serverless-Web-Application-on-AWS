@@ -318,7 +318,25 @@ Steps to Build the Project:
 ![Screenshot 2024-03-04 135215](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/9db0fd79-024a-418a-a2b9-b0bd9e582178)
 - Now I will execute the Lambda Function again
 ![Screenshot 2024-03-04 135306](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/0556bdd7-32c8-4915-a6ef-511b37ca6363)
-- It has been successful as it gave a response of 2. Previously in the Dynamo DB table, it had 1 view but now it will have another item with 2 as views based on the Lambda
+- It has been successful as it gave a response of 2. Previously in the Dynamo DB table, it had 1 view but now it will have another item with 2 as views based on the Lambda Function
+![Screenshot 2024-03-04 135420](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/cdabaef6-3691-40a8-b9fc-881660f59417)
+- The next step will be to integrate the Lambda Function into the web application to enable the views count to increase when the page is refreshed/viewed
+- To integrate the code into the website to get the viewer count to increase I added a JavaScript function in the script.js stored in the S3 bucket in a TextEditor as follows:
+![Screenshot 2024-03-06 145522](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/e07dc99b-83a5-4aa4-8fa1-c14a34a6faa4)
+- I added a counter which is a query selector and the name will be “counter-number”
+- I used an async function to update the counter “async function updateCounter()”
+- I am fetching the Lambda URL which can be found in the Lambda Function URL:
+![Screenshot 2024-03-06 145749](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/7db5480f-1a78-46d6-922b-cef2358cb501)
+- The data is being retrieved in “json” format and is being updated in ${data} and will be shown in ‘Views’ with this line”counter.innerHTML = ‘Views’: ${data}’”
+- I will showcase the code in the “index.html” file
+![Screenshot 2024-03-07 135603](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/d07129ae-41dd-47a8-809c-8e329bd77f95)
+- In Line 10, I provided in the div class called “counter-number” which was the same name in the script.js file. This will appear in the web app as “Views”
+- To link the script.js file to the html file, in line 20 I added “<script src=”script.js”></script>”
+- Now to show the outcome on the web application
+![Screenshot 2024-03-07 140223](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/ff9b1c5d-3448-48b8-85bf-246915ef593d)
+![Screenshot 2024-03-07 140417](https://github.com/AllenUdejiole/Hosting-Static-Website-on-EC2-instance-Linux-/assets/160611100/948a688d-befb-4de4-9e0a-6732e272af07)
+- As you can see, the view counter now appears and increases as the refresh button is clicked, increasing the count
+- This is the conclusion of this project which I have learned and applied using different AWS Services and combining them to create a Serverless Web Application
 
 
 
